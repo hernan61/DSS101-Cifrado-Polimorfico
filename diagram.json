@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp_tx", "top": -40, "left": -250, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp_rx", "top": -40, "left": 100, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp_tx:GND.1", "esp_rx:GND.1", "black", [ "v0" ] ],
+    [ "esp_tx:5V", "esp_rx:5V", "red", [ "v0" ] ],
+    [ "esp_tx:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp_tx:RX", "$serialMonitor:TX", "", [] ]
+  ],
+  "serialMonitor": {
+    "display": "always"
+  }
+}
